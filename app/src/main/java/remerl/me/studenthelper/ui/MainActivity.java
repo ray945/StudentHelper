@@ -10,6 +10,7 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import remerl.me.studenthelper.R;
 import remerl.me.studenthelper.dao.Category;
@@ -124,6 +125,7 @@ public class MainActivity extends BaseActivity {
     public void onBackPressed() {
         if (System.currentTimeMillis() - exitTime > 2000) {
             exitTime = System.currentTimeMillis();
+            Toast.makeText(this, R.string.exit, Toast.LENGTH_SHORT).show();
         } else {
             finish();
         }

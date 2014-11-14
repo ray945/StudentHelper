@@ -42,6 +42,28 @@ public class DrawerFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 mListView.setItemChecked(position, true);
                 mainActivity.setCategory(Category.values()[position]);
+
+                switch (Category.values()[position]) {
+                    case Home:
+
+                        break;
+                    case Personal:
+                        TodoFragment todoFragment = new TodoFragment();
+                        getFragmentManager().beginTransaction().replace(R.id.container, todoFragment)
+                            .commit();
+                        break;
+                    case MyClass:
+
+                        break;
+                    case MessageBoard:
+                        
+                        break;
+                    case Settings:
+
+                        break;
+                    default:
+                        break;
+                }
             }
         });
         return rootView;
