@@ -14,7 +14,9 @@ import android.widget.Toast;
 
 import remerl.me.studenthelper.R;
 import remerl.me.studenthelper.dao.Category;
+import remerl.me.studenthelper.ui.fragment.BaseFragment;
 import remerl.me.studenthelper.ui.fragment.DrawerFragment;
+import remerl.me.studenthelper.ui.fragment.TodoFragment;
 
 /**
  * Created by qiugang on 2014/11/13.
@@ -27,6 +29,8 @@ public class MainActivity extends BaseActivity {
 
     private Toolbar toolbar;
 
+    private BaseFragment contentFragment;
+
     private Category mCategory;
 
     private long exitTime = 0;
@@ -36,8 +40,8 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         initToolbar();
         initDrawer();
-        setCategory(Category.Home);
-        getFragmentManager().beginTransaction().replace(R.id.left_drawer, new DrawerFragment()).commit();
+        // 默认选择
+        setCategory(Category.Personal);
     }
 
     @Override
@@ -79,6 +83,7 @@ public class MainActivity extends BaseActivity {
         };
 
         mDrawerLayout.setDrawerListener(mDrawerToggle);
+        getFragmentManager().beginTransaction().replace(R.id.left_drawer, new DrawerFragment()).commit();
     }
 
     @Override
@@ -116,6 +121,26 @@ public class MainActivity extends BaseActivity {
             return;
         }
         mCategory = category;
+        switch (category) {
+            case Home:
+                break;
+            case Personal:
+                contentFragment = new TodoFragment();
+                break;
+            case MyClass:
+
+                break;
+            case MessageBoard:
+
+                break;
+            case Settings:
+
+                break;
+            default:
+                break;
+        }
+        getFragmentManager().beginTransaction().replace(R.id.container, contentFragment)
+                .commit();
         //Set title
         getSupportActionBar().setTitle(category.getDisplayName());
     }

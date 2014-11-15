@@ -6,5 +6,6 @@
     <string name="action_settings">Settings</string>
     <string name="drawer_open">open</string>
     <string name="drawer_close">close</string>
+    <string name="exit">再次点击返回键退出~</string>
 
 </resources>
