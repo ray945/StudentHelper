@@ -16,6 +16,7 @@ import remerl.me.studenthelper.R;
 import remerl.me.studenthelper.dao.Category;
 import remerl.me.studenthelper.ui.fragment.BaseFragment;
 import remerl.me.studenthelper.ui.fragment.DrawerFragment;
+import remerl.me.studenthelper.ui.fragment.MessageBoardFragment;
 import remerl.me.studenthelper.ui.fragment.TodoFragment;
 
 /**
@@ -131,7 +132,7 @@ public class MainActivity extends BaseActivity {
 
                 break;
             case MessageBoard:
-
+                contentFragment = new MessageBoardFragment();
                 break;
             case Settings:
 

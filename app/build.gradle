@@ -25,4 +25,6 @@ dependencies {
     compile 'com.android.support:support-v4:21.0.0+'
     compile "com.daimajia.swipelayout:library:1.1.7@aar"
     compile 'com.ikimuhendis:ldrawer:0.1'
+    compile 'com.melnykov:floatingactionbutton:1.0.7'
+    compile 'com.telly:floatingaction:0.0.6'
 }
