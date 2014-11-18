@@ -1,6 +1,5 @@
 package remerl.me.studenthelper.ui.fragment;
 
-import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,11 +13,11 @@ import remerl.me.studenthelper.R;
 /**
  * Created by qiugang on 14/11/13.
  */
-public class TodoFragment extends Fragment {
+public class TodoFragment extends BaseFragment {
 
-    Button todoDel;
+    private Button todoDel;
 
-    SwipeLayout todoLayout;
+    private SwipeLayout todoLayout;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
