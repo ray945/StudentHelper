@@ -19,7 +19,7 @@ import remerl.me.studenthelper.adapter.MessagesAdapter;
 public class MessageBoardFragment extends BaseFragment implements SwipeRefreshLayout.OnRefreshListener, View.OnClickListener{
 
     private SwipeRefreshLayout mSwipe;
-    private ListView mListView;
+    public ListView mListView;
 
     private FloatingAction mFloatingAction;
 
@@ -30,10 +30,11 @@ public class MessageBoardFragment extends BaseFragment implements SwipeRefreshLa
         mSwipe = (SwipeRefreshLayout) rootView.findViewById(R.id.message_swipeRefreshLayout);
         mListView = (ListView) rootView.findViewById(R.id.message_listView);
         mListView.setAdapter(new MessagesAdapter());
+
         mFloatingAction = FloatingAction.from(getActivity())
-                .listenTo(mListView)
                 .icon(R.drawable.add)
                 .listener(this)
+                .listenTo(mListView)
                 .build();
         return rootView;
     }
@@ -46,5 +47,11 @@ public class MessageBoardFragment extends BaseFragment implements SwipeRefreshLa
     @Override
     public void onClick(View v) {
 
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        mFloatingAction.onDestroy();
     }
 }

@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import remerl.me.studenthelper.App;
 import remerl.me.studenthelper.R;
-import remerl.me.studenthelper.dao.Category;
+import remerl.me.studenthelper.model.Category;
 
 
 /**

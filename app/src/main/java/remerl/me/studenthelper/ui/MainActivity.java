@@ -13,7 +13,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import remerl.me.studenthelper.R;
-import remerl.me.studenthelper.dao.Category;
+import remerl.me.studenthelper.model.Category;
 import remerl.me.studenthelper.ui.fragment.BaseFragment;
 import remerl.me.studenthelper.ui.fragment.DrawerFragment;
 import remerl.me.studenthelper.ui.fragment.MessageBoardFragment;
@@ -42,7 +42,8 @@ public class MainActivity extends BaseActivity {
         initToolbar();
         initDrawer();
         // 默认选择
-        setCategory(Category.Personal);
+        setCategory(Category.TodoList);
+
     }
 
     @Override
@@ -125,11 +126,10 @@ public class MainActivity extends BaseActivity {
         switch (category) {
             case Home:
                 break;
-            case Personal:
+            case TodoList:
                 contentFragment = new TodoFragment();
                 break;
-            case MyClass:
-
+            case ClassInformation:
                 break;
             case MessageBoard:
                 contentFragment = new MessageBoardFragment();

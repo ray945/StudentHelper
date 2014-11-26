@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import remerl.me.studenthelper.R;
 import remerl.me.studenthelper.adapter.DrawerAdapter;
-import remerl.me.studenthelper.dao.Category;
+import remerl.me.studenthelper.model.Category;
 import remerl.me.studenthelper.ui.MainActivity;
 
 

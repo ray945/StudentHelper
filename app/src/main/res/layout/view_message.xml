@@ -40,7 +40,6 @@
         android:padding="16dp"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:background="#dedede"
         android:text="Priority mode on AndroidLollipop is like a reception for your notifications.
 You tell it what to let through,and what to keep ...."
         android:textSize="14sp"/>
