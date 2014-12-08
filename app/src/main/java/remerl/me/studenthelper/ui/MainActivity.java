@@ -85,7 +85,7 @@ public class MainActivity extends BaseActivity {
         };
 
         mDrawerLayout.setDrawerListener(mDrawerToggle);
-        getFragmentManager().beginTransaction().replace(R.id.left_drawer, new DrawerFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.left_drawer, new DrawerFragment()).commit();
     }
 
     @Override
@@ -140,7 +140,7 @@ public class MainActivity extends BaseActivity {
             default:
                 break;
         }
-        getFragmentManager().beginTransaction().replace(R.id.container, contentFragment)
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, contentFragment)
                 .commit();
         //Set title
         getSupportActionBar().setTitle(category.getDisplayName());

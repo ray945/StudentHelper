@@ -51,6 +51,7 @@ public abstract class BaseActivity extends ActionBarActivity {
         return new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+
             }
         };
     }

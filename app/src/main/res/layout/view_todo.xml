@@ -19,7 +19,7 @@
             android:orientation="vertical">
             <!--What you want to show-->
             <Button
-                android:id="@+id/todo_del"
+                android:id="@+id/todo_del_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/trash" />
@@ -34,13 +34,22 @@
             android:layout_height="match_parent">
             <!--What you want to show in SurfaceView-->
             <TextView
+                android:id="@+id/todo_content_textView"
                 android:tag="Hover"
                 android:text="只是试试"
                 android:textSize="20sp"
+                android:gravity="center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
         </LinearLayout>
         <!-- Surface View End -->
     </com.daimajia.swipe.SwipeLayout>
+
+    <!--<TextView-->
+        <!--android:id="@+id/todo_content_textView"-->
+        <!--android:padding="16dp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="this is for test"/>-->
 
 </LinearLayout>

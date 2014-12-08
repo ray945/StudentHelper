@@ -7,7 +7,7 @@ import remerl.me.studenthelper.data.RequestManager;
 
 
 /**
- * Created by admin on 2014/9/21.
+ * Created by qiugang on 2014/9/21.
  */
 public class App extends Application {
     private static Context context;

@@ -16,6 +16,10 @@ public abstract class BaseDataHelper {
         this.mContext = context;
     }
 
+    public Context getContext() {
+        return mContext;
+    }
+
     public abstract Uri getContentUri();
 
     public void notifyChange() {

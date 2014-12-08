@@ -9,18 +9,17 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class DBHelper extends SQLiteOpenHelper {
 
-    private final static String DB_NAME = "TodoList.db";
+    private final static String DB_NAME = "todo.db";
 
     private final static int DB_VERSION = 1;
 
-    public DBHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+    public DBHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
 
-
     @Override
     public void onCreate(SQLiteDatabase db) {
-
+        TodoDataHelper.TodoDBInfo.TABLE.create(db);
     }
 
     @Override
