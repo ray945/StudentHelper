@@ -14,7 +14,6 @@ import remerl.me.studenthelper.App;
 import remerl.me.studenthelper.R;
 import remerl.me.studenthelper.adapter.TodoListAdapter;
 import remerl.me.studenthelper.dao.TodoDataHelper;
-import remerl.me.studenthelper.model.Todo;
 
 /**
  * Created by qiugang on 14/11/13.

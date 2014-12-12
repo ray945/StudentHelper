@@ -24,15 +24,15 @@
                 android:layout_height="wrap_content"
                 android:text="Jeremy "
                 android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="#666"
+                android:textColor="@color/text_color"
                 />
             <TextView
                 android:layout_marginTop="4dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="16小时前"
-                android:textSize="12sp"/>
+                android:textSize="12sp"
+                android:textColor="@color/text_color"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -42,7 +42,8 @@
         android:layout_width="match_parent"
         android:text="Priority mode on AndroidLollipop is like a reception for your notifications.
 You tell it what to let through,and what to keep ...."
-        android:textSize="16sp"/>
+        android:textSize="16sp"
+        android:textColor="@color/text_color"/>
 
     <LinearLayout
         android:layout_width="match_parent"

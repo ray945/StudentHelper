@@ -14,13 +14,14 @@ import remerl.me.studenthelper.data.RequestManager;
 /**
  * Created by qiugang on 2014/9/21.
  */
-public class BaseFragment extends Fragment {
+public abstract class BaseFragment extends Fragment {
     protected Activity activity;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         activity = getActivity();
     }
+
 
     @Override
     public void onStop() {

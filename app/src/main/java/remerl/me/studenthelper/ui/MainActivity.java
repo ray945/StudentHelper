@@ -17,6 +17,7 @@ import remerl.me.studenthelper.model.Category;
 import remerl.me.studenthelper.ui.fragment.BaseFragment;
 import remerl.me.studenthelper.ui.fragment.DrawerFragment;
 import remerl.me.studenthelper.ui.fragment.MessageBoardFragment;
+import remerl.me.studenthelper.ui.fragment.NoticeFragment;
 import remerl.me.studenthelper.ui.fragment.TodoFragment;
 
 /**
@@ -130,6 +131,7 @@ public class MainActivity extends BaseActivity {
                 contentFragment = new TodoFragment();
                 break;
             case ClassInformation:
+                contentFragment = new NoticeFragment();
                 break;
             case MessageBoard:
                 contentFragment = new MessageBoardFragment();
