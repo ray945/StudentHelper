@@ -8,11 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CursorAdapter;
 import android.widget.TextView;
 
-
 import com.daimajia.swipe.SwipeLayout;
+import com.daimajia.swipe.adapters.CursorSwipeAdapter;
 
 import remerl.me.studenthelper.R;
 import remerl.me.studenthelper.model.Todo;
@@ -20,7 +19,7 @@ import remerl.me.studenthelper.model.Todo;
 /**
  * Created by qiugang on 14/11/17.
  */
-public class TodoListAdapter extends CursorAdapter {
+public class TodoListAdapter extends CursorSwipeAdapter {
     private static final String TAG = TodoListAdapter.class.getSimpleName();
 
     private Context mContext;
@@ -72,6 +71,11 @@ public class TodoListAdapter extends CursorAdapter {
         return holder;
     }
 
+    @Override
+    public int getSwipeLayoutResourceId(int position) {
+        return R.id.todo_layout;
+    }
+
     private class Holder {
         private SwipeLayout todoLayout;
 
@@ -80,8 +84,8 @@ public class TodoListAdapter extends CursorAdapter {
         private Button todoDel;
 
         public Holder(View view) {
-//            todoLayout = (SwipeLayout) view.findViewById(R.id.todo_layout);
-//            todoDel = (Button) view.findViewById(R.id.todo_del);
+            todoLayout = (SwipeLayout) view.findViewById(R.id.todo_layout);
+            todoDel = (Button) view.findViewById(R.id.todo_del_button);
             this.todoContent = (TextView)view.findViewById(R.id.todo_content_textView);
         }
     }
