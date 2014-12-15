@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="你好，"/>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:text="Ray"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="50dp"
+        android:paddingBottom="20dp"
+        android:textSize="20sp"
+        android:background="@drawable/notice"
+        android:text="网协是一个魔鬼教官，他会要求你每天写9小时40分钟代码。他的每一次出招都居心叵测，你的每一次接招他都铭记在心。每一份努力都换来一份收获，到毕业之时，十万代码也就烂熟于心了。"/>
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/into_todo"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:text="个人事务"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/into_notice"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:text="班级通知"
+            android:layout_weight="1"/>
+
+        <Button android:id="@+id/into_message"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:text="下课聊"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+</LinearLayout>

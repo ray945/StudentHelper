@@ -16,6 +16,7 @@ import remerl.me.studenthelper.R;
 import remerl.me.studenthelper.model.Category;
 import remerl.me.studenthelper.ui.fragment.BaseFragment;
 import remerl.me.studenthelper.ui.fragment.DrawerFragment;
+import remerl.me.studenthelper.ui.fragment.IndexFragment;
 import remerl.me.studenthelper.ui.fragment.MessageBoardFragment;
 import remerl.me.studenthelper.ui.fragment.NoticeFragment;
 import remerl.me.studenthelper.ui.fragment.TodoFragment;
@@ -126,6 +127,7 @@ public class MainActivity extends BaseActivity {
         mCategory = category;
         switch (category) {
             case Home:
+                contentFragment = new IndexFragment();
                 break;
             case TodoList:
                 contentFragment = new TodoFragment();
