@@ -1,75 +1,104 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/card_bg"
-    android:orientation="vertical" >
+    android:background="#fff"
+    android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
         android:paddingLeft="16dp"
-        android:paddingBottom="8dp">
+        android:paddingTop="8dp">
 
-        <ImageView android:layout_width="48dp"
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="48dp"
             android:layout_height="48dp"
-            android:background="@android:color/holo_blue_dark"/>
+            android:src="@drawable/profile" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:orientation="vertical"
             android:paddingLeft="16dp">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Jeremy "
-                android:textSize="18sp"
+                android:text="皮卡丘 "
                 android:textColor="@color/text_color"
-                />
+                android:textSize="14sp" />
+
             <TextView
-                android:layout_marginTop="4dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:text="16小时前"
-                android:textSize="12sp"
-                android:textColor="@color/text_color"/>
+                android:textColor="@color/text_color"
+                android:textSize="12sp" />
         </LinearLayout>
     </LinearLayout>
 
     <TextView
-        android:padding="16dp"
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:text="Priority mode on AndroidLollipop is like a reception for your notifications.
-You tell it what to let through,and what to keep ...."
-        android:textSize="16sp"
-        android:textColor="@color/text_color"/>
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="8dp"
+        android:text="Priority mode on AndroidLollipop is like a reception for your notifications.You tell it what to let through,and what to keep ...."
+        android:textColor="@color/text_color"
+        android:textSize="16sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
-        <Button
-            android:id="@+id/message_like_button"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:background="@drawable/heart_like"/>
-        <TextView
-            android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:text="234 likes"/>
-        <Button
-            android:id="@+id/message_dislike_button"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginLeft="16dp"
-            android:background="@drawable/heart_dislike"/>
-        <TextView
-            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/message_like_button"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/btn_feed_action"
+                android:src="@drawable/ic_heart_outline_grey" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="250" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:text="234 dislikes"/>
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/message_comments_button"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/btn_feed_action"
+                android:src="@drawable/ic_comment_outline_grey" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="234" />
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

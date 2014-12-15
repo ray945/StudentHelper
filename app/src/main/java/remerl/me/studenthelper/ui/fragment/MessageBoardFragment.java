@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import com.telly.floatingaction.FloatingAction;
+import com.melnykov.fab.FloatingActionButton;
 
 import remerl.me.studenthelper.R;
 import remerl.me.studenthelper.adapter.MessagesAdapter;
@@ -17,25 +17,22 @@ import remerl.me.studenthelper.adapter.MessagesAdapter;
  * Created by qiugang on 14/11/13.
  */
 public class MessageBoardFragment extends BaseFragment implements SwipeRefreshLayout.OnRefreshListener, View.OnClickListener{
+    private SwipeRefreshLayout mSwipeRefrshLayout;
 
-    private SwipeRefreshLayout mSwipe;
-    public ListView mListView;
+    private ListView mListView;
 
-    private FloatingAction mFloatingAction;
+    private FloatingActionButton mFAB;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_message_board, container, false);
-        mSwipe = (SwipeRefreshLayout) rootView.findViewById(R.id.message_swipeRefreshLayout);
+        mSwipeRefrshLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.message_swipeRefreshLayout);
         mListView = (ListView) rootView.findViewById(R.id.message_listView);
+        mFAB = (FloatingActionButton) rootView.findViewById(R.id.message_fb);
+        mFAB.attachToListView(mListView);
+        mFAB.show();
         mListView.setAdapter(new MessagesAdapter());
-
-        mFloatingAction = FloatingAction.from(getActivity())
-                .icon(R.drawable.add)
-                .listener(this)
-                .listenTo(mListView)
-                .build();
         return rootView;
     }
 
@@ -52,6 +49,5 @@ public class MessageBoardFragment extends BaseFragment implements SwipeRefreshLa
     @Override
     public void onPause() {
         super.onPause();
-        mFloatingAction.onDestroy();
     }
 }

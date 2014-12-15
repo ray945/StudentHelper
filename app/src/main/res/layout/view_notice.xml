@@ -6,6 +6,7 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/view_notice_title_textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
@@ -14,7 +15,7 @@
         android:textColor="@color/text_color"/>
 
     <com.ms.square.android.expandabletextview.ExpandableTextView
-        android:id="@+id/expand_text_view"
+        android:id="@+id/view_notice_expand_textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -33,9 +34,9 @@
 
         <ImageButton
             android:id="@id/expand_collapse"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="right|bottom"
+            android:layout_gravity="bottom|center_horizontal"
             android:layout_margin="8dp"
             android:padding="8dp"
             android:background="@android:color/transparent" />

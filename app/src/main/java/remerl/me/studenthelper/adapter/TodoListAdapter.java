@@ -58,8 +58,6 @@ public class TodoListAdapter extends CursorSwipeAdapter {
         TextView contentView = (TextView) view.findViewById(R.id.todo_content_textView);
         contentView.setText(todo._id +"/" + todo.content + "/" + todo.create_at  + "/"+ todo.complete );
         Log.d("this is content", todo.content);
-        System.out.print(todo.content + "");
-
     }
 
     private Holder getHolder(final View view) {

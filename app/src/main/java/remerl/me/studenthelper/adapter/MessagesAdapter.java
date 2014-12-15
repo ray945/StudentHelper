@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageButton;
 
 import remerl.me.studenthelper.App;
 import remerl.me.studenthelper.R;
@@ -30,17 +31,33 @@ public class MessagesAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder viewHolder;
+        Holder viewHolder;
         if (convertView == null) {
-            viewHolder = new ViewHolder();
             convertView = LayoutInflater.from(App.getContext()).inflate(R.layout.view_message, null);
-            convertView.setTag(viewHolder);
+
         } else {
-            viewHolder = (ViewHolder) convertView.getTag();
+            viewHolder = (Holder) convertView.getTag();
         }
         return convertView;
     }
 
-    static class ViewHolder {
+    private Holder getHolder(final View view) {
+        Holder holder = (Holder) view.getTag();
+        if (holder == null) {
+            return new Holder(view);
+        }
+        return holder;
+    }
+
+    static class Holder {
+        private ImageButton buttonLikes;
+
+        private ImageButton buttonComments;
+
+        public Holder(View view) {
+            buttonLikes = (ImageButton) view.findViewById(R.id.message_like_button);
+            buttonComments = (ImageButton)view.findViewById(R.id.message_comments_button);
+        }
+
     }
 }

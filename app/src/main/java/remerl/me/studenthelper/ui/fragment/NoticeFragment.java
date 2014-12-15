@@ -9,6 +9,7 @@ import android.widget.ListView;
 
 import remerl.me.studenthelper.R;
 import remerl.me.studenthelper.adapter.NoticesAdapter;
+import remerl.me.studenthelper.view.LoadingFooter;
 
 /**
  * Created by qiugang on 14/11/13.
@@ -17,6 +18,9 @@ public class NoticeFragment extends BaseFragment {
     private ListView mListView;
 
     private NoticesAdapter mNoticesAdapter;
+
+    private LoadingFooter mLoadingFooter;
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
@@ -26,4 +30,6 @@ public class NoticeFragment extends BaseFragment {
         mListView.setAdapter(mNoticesAdapter);
         return rootView;
     }
+
+
 }
