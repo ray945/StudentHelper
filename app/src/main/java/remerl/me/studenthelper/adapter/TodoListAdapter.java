@@ -35,9 +35,12 @@ public class TodoListAdapter extends CursorSwipeAdapter {
 
     private LayoutInflater mLayoutInflater;
 
-    public TodoListAdapter(Context context, Cursor cursor) {
+    private DataChangedListener dateChangedListener;
+
+    public TodoListAdapter(Context context, Cursor cursor, DataChangedListener dataChangedListener) {
         super(context, cursor, false);
         this.mContext = context;
+        this.dateChangedListener = dataChangedListener;
         mLayoutInflater = ((Activity)context).getLayoutInflater();
     }
 
@@ -58,21 +61,28 @@ public class TodoListAdapter extends CursorSwipeAdapter {
     }
 
     @Override
-    public void bindView(View view, Context context, Cursor cursor) {
-        Holder holder = getHolder(view);
+    public void bindView(View view, Context context,final Cursor cursor) {
+        final Holder holder = getHolder(view);
         mHelper = new TodoDataHelper(context);
         todo = Todo.fromCursor(cursor);
+//        Log.d("cursor position", cursor.getPosition() + "");
         final TextView contentView = (TextView) view.findViewById(R.id.todo_content_textView);
 
         contentView.setText(todo._id+todo.content);
         holder.todoDel.setOnClickListener(new View.OnClickListener() {
+            private Todo temple = todo;
             @Override
             public void onClick(View v) {
-                mHelper.delete(todo);
+                mHelper.delete(temple);
+                Log.d("delete todo id", temple._id + "");
+                dateChangedListener.dataChanged();
+//                Log.d("cursor position", cursor.getPosition() + "");
+                holder.todoLayout.close();
             }
         });
 
-        Log.d("this is content", todo.content);
+
+
     }
 
     private Holder getHolder(final View view) {
@@ -104,5 +114,9 @@ public class TodoListAdapter extends CursorSwipeAdapter {
             todoComplete = (Button) view.findViewById(R.id.todo_complete_button);
             this.todoContent = (TextView)view.findViewById(R.id.todo_content_textView);
         }
+    }
+
+    public interface DataChangedListener {
+        public void dataChanged();
     }
 }

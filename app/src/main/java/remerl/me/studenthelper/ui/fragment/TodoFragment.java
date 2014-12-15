@@ -22,7 +22,8 @@ import remerl.me.studenthelper.model.Todo;
 /**
  * Created by qiugang on 14/11/13.
  */
-public class TodoFragment extends BaseFragment implements LoaderManager.LoaderCallbacks<Cursor> {
+public class TodoFragment extends BaseFragment implements LoaderManager.LoaderCallbacks<Cursor> ,
+        TodoListAdapter.DataChangedListener{
 
     public static final String TAG = TodoFragment.class.getSimpleName();
 
@@ -34,13 +35,15 @@ public class TodoFragment extends BaseFragment implements LoaderManager.LoaderCa
 
     private TodoListAdapter mTodoListAdapter;
 
+    private int i = 1;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View todoView = inflater.inflate(R.layout.fragment_todo, container, false);
         mListView = (ListView) todoView.findViewById(R.id.todo_listView);
 
-        mTodoListAdapter = new TodoListAdapter(getActivity(), null);
+        mTodoListAdapter = new TodoListAdapter(getActivity(), null, this);
         TextView textView = new TextView(getActivity());
         textView.setText("this is empty");
         mListView.setEmptyView(textView);
@@ -81,10 +84,15 @@ public class TodoFragment extends BaseFragment implements LoaderManager.LoaderCa
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.add_todo:
-                mHelper.insert(new Todo(1,"This is just for test", "", 0));
+                mHelper.insert(new Todo(1,"This is just for test" + "---" + i++, "", 0));
                 break;
             default:
         }
         return true;
+    }
+
+    @Override
+    public void dataChanged() {
+        getLoaderManager().restartLoader(0, null, this);
     }
 }
