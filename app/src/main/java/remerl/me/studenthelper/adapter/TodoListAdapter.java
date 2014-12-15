@@ -14,6 +14,7 @@ import com.daimajia.swipe.SwipeLayout;
 import com.daimajia.swipe.adapters.CursorSwipeAdapter;
 
 import remerl.me.studenthelper.R;
+import remerl.me.studenthelper.dao.TodoDataHelper;
 import remerl.me.studenthelper.model.Todo;
 
 /**
@@ -25,6 +26,12 @@ public class TodoListAdapter extends CursorSwipeAdapter {
     private Context mContext;
 
     private Todo todo;
+
+    private Button todoDelButton;
+
+    private Button todoCompleteButton;
+
+    private TodoDataHelper mHelper;
 
     private LayoutInflater mLayoutInflater;
 
@@ -53,10 +60,18 @@ public class TodoListAdapter extends CursorSwipeAdapter {
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
         Holder holder = getHolder(view);
+        mHelper = new TodoDataHelper(context);
         todo = Todo.fromCursor(cursor);
+        final TextView contentView = (TextView) view.findViewById(R.id.todo_content_textView);
 
-        TextView contentView = (TextView) view.findViewById(R.id.todo_content_textView);
-        contentView.setText(todo._id +"/" + todo.content + "/" + todo.create_at  + "/"+ todo.complete );
+        contentView.setText(todo._id+todo.content);
+        holder.todoDel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mHelper.delete(todo);
+            }
+        });
+
         Log.d("this is content", todo.content);
         System.out.print(todo.content + "");
 
@@ -81,11 +96,14 @@ public class TodoListAdapter extends CursorSwipeAdapter {
 
         private TextView todoContent;
 
-        private Button todoDel;
+        final private Button todoDel;
+
+        private Button todoComplete;
 
         public Holder(View view) {
             todoLayout = (SwipeLayout) view.findViewById(R.id.todo_layout);
             todoDel = (Button) view.findViewById(R.id.todo_del_button);
+            todoComplete = (Button) view.findViewById(R.id.todo_complete_button);
             this.todoContent = (TextView)view.findViewById(R.id.todo_content_textView);
         }
     }

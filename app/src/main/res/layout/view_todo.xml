@@ -1,34 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <com.daimajia.swipe.SwipeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/todo_layout"
         android:layout_width="match_parent"
-        android:layout_height="80dp">
+        android:layout_height="60dp">
         <!-- Bottom View Start-->
         <LinearLayout
             android:background="#66ddff00"
             android:id="@+id/bottom_wrapper"
-            android:layout_width="100dp"
+            android:layout_width="160dp"
             android:weightSum="1"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="horizontal">
             <!--What you want to show-->
             <Button
+                android:id="@+id/todo_complete_button"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:background="#228B22"
+                android:text="YES"/>
+            <Button
                 android:id="@+id/todo_del_button"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/trash" />
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:background="#FF3030"
+                android:text="DEL" />
         </LinearLayout>
         <!-- Bottom View End-->
 
         <!-- Surface View Start -->
         <LinearLayout
-            android:padding="10dp"
+            android:padding="8dp"
             android:background="#ffffff"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -36,8 +45,9 @@
             <TextView
                 android:id="@+id/todo_content_textView"
                 android:tag="Hover"
+                android:textColor="#666666"
                 android:text="只是试试"
-                android:textSize="20sp"
+                android:textSize="25sp"
                 android:gravity="center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
@@ -45,11 +55,5 @@
         <!-- Surface View End -->
     </com.daimajia.swipe.SwipeLayout>
 
-    <!--<TextView-->
-        <!--android:id="@+id/todo_content_textView"-->
-        <!--android:padding="16dp"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="this is for test"/>-->
 
 </LinearLayout>
