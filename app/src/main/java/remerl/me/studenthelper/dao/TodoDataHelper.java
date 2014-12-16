@@ -71,9 +71,7 @@ public class TodoDataHelper extends BaseDataHelper {
     }
 
     public CursorLoader getTodoCursorLoader() {
-        return new CursorLoader(getContext(), getContentUri(), null, TodoDBInfo.COMPLETE + "=?",new String[]{
-                String.valueOf(0)
-        }, TodoDBInfo._ID + " ASC");
+        return new CursorLoader(getContext(), getContentUri(), null, null,null, TodoDBInfo._ID + " ASC");
     }
 
     public CursorLoader getDoneTodoCusorLoader() {

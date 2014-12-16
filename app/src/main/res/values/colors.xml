@@ -13,6 +13,7 @@
     <color name="text_color">#666</color>
 
     <color name="test">#da4f45</color>
+    <color name="test_primary">#ac372f</color>
     <!--<color name="test">#0a8f08</color>-->
     <color name="background">#292e34</color>
 

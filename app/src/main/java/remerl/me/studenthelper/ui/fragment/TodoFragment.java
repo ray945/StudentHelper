@@ -87,6 +87,7 @@ public class TodoFragment extends BaseFragment implements LoaderManager.LoaderCa
                 mHelper.insert(new Todo(1,"This is just for test" + "---" + i++, "", 0));
                 break;
             default:
+                break;
         }
         return true;
     }
