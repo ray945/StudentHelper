@@ -44,7 +44,7 @@ public class MainActivity extends BaseActivity {
         initToolbar();
         initDrawer();
         // 默认选择
-        setCategory(Category.TodoList);
+        setCategory(Category.Home);
 
     }
 

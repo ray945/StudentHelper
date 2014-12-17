@@ -84,7 +84,7 @@ public class TodoFragment extends BaseFragment implements LoaderManager.LoaderCa
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.add_todo:
-                mHelper.insert(new Todo(1,"This is just for test" + "---" + i++, "", 0));
+                mHelper.insert(new Todo(1,"This is just for test" , "", 0));
                 break;
             default:
                 break;

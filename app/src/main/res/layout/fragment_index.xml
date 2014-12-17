@@ -1,67 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <LinearLayout
+    android:layout_height="match_parent">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <TextView
-            android:layout_margin="10dp"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:text="你好，"/>
+            android:layout_margin="8dp"
+            android:paddingBottom="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="#fff">
 
-        <TextView
-            android:id="@+id/tv_name"
+            <TextView
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@color/text_color"
+                android:text="你好，"/>
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="@color/text_color"
+                android:text="请登录"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="#fff">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="#FF6A6A"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/content_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:padding="10dp"
+                    android:textSize="20sp"
+                    android:text="通知标题"/>
+
+                <TextView
+                    android:id="@+id/content_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:padding="10dp"
+                    android:textSize="18sp"
+                    android:text="网协是一个魔鬼教官，他会要求你每天写9小时40分钟代码。他的每一次出招都居心叵测，你的每一次接招他都铭记在心。每一份努力都换来一份收获，到毕业之时，十万代码也就烂熟于心了。"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TableLayout
             android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:text="Ray"/>
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fff">
+
+            <TableRow>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <Button
+                        android:id="@+id/into_todo"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/todo"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="20dp"
+                        android:textColor="@color/text_color"
+                        android:text="备忘录"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <Button
+                        android:id="@+id/into_notice"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/notice"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="20dp"
+                        android:textColor="@color/text_color"
+                        android:text="班级通知"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <Button android:id="@+id/into_message"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/message"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="20dp"
+                        android:textColor="@color/text_color"
+                        android:text="下课聊"/>
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <Button
+                        android:id="@+id/into_info"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/info"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:textColor="@color/text_color"
+                        android:text="个人信息"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <Button
+                        android:id="@+id/into_setting"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/setting"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:textColor="@color/text_color"
+                        android:text="设置"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <Button android:id="@+id/into_quit"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/quit"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:textColor="@color/text_color"
+                        android:text="注销"/>
+                </LinearLayout>
+            </TableRow>
+        </TableLayout>
     </LinearLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:paddingTop="50dp"
-        android:paddingBottom="20dp"
-        android:textSize="20sp"
-        android:background="@drawable/notice"
-        android:text="网协是一个魔鬼教官，他会要求你每天写9小时40分钟代码。他的每一次出招都居心叵测，你的每一次接招他都铭记在心。每一份努力都换来一份收获，到毕业之时，十万代码也就烂熟于心了。"/>
-
-    <LinearLayout
-        android:layout_marginTop="30dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/into_todo"
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:text="个人事务"
-            android:layout_weight="1"/>
-
-        <Button
-            android:id="@+id/into_notice"
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:text="班级通知"
-            android:layout_weight="1"/>
-
-        <Button android:id="@+id/into_message"
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:text="下课聊"
-            android:layout_weight="1"/>
-
-    </LinearLayout>
-</LinearLayout>
+</ScrollView>
