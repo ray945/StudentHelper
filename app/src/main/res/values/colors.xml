@@ -11,9 +11,10 @@
 
 
     <color name="text_color">#666</color>
+    <color name="text_title_color">#fff</color>
 
-    <color name="test">#da4f45</color>
-    <color name="test_primary">#ac372f</color>
+    <color name="test">#FF6A6A</color>
+    <color name="test_primary">#FFEB6161</color>
     <!--<color name="test">#0a8f08</color>-->
     <color name="background">#292e34</color>
 
