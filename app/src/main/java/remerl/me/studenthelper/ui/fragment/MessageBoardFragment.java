@@ -6,6 +6,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.melnykov.fab.FloatingActionButton;
@@ -23,6 +24,8 @@ public class MessageBoardFragment extends BaseFragment implements SwipeRefreshLa
 
     private FloatingActionButton mFAB;
 
+    private LinearLayout viewMessage;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -32,7 +35,7 @@ public class MessageBoardFragment extends BaseFragment implements SwipeRefreshLa
         mFAB = (FloatingActionButton) rootView.findViewById(R.id.message_fb);
         mFAB.attachToListView(mListView);
         mFAB.show();
-        mListView.setAdapter(new MessagesAdapter());
+        mListView.setAdapter(new MessagesAdapter(getActivity()));
         return rootView;
     }
 
