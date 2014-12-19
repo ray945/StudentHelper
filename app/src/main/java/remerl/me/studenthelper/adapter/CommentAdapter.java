@@ -36,6 +36,10 @@ public class CommentAdapter extends BaseAdapter {
         return 0;
     }
 
+    public boolean isEnabled(int position) {
+        return false;
+    }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;

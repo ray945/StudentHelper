@@ -4,20 +4,22 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:id="@+id/commentLinearLayout">
+    android:id="@+id/commentLinearLayout"
+    android:background="@drawable/card_bg">
     <include layout= "@layout/toolbar"
         android:id="@+id/comment_actionbar"
         />
 
     <ListView
         android:layout_marginTop="8dp"
-        android:clickable="false"
         android:layout_below="@id/comment_actionbar"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:layout_marginRight="8dp"
         android:layout_marginLeft="8dp"
+        android:dividerHeight="16dp"
         android:id="@+id/commentListView"
+        android:scrollbarStyle="outsideOverlay"
         tools:listitem="@layout/view_comment_item" />
 
     <LinearLayout

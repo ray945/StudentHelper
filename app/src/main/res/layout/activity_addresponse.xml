@@ -1,26 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/card_bg"
+    >
 
-    <ScrollView
+    <include
+        layout="@layout/toolbar"
+        android:id="@+id/response_actionbar" />
+
+    <EditText
+        android:background="#fff"
+        android:id="@+id/content_et"
         android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textSize="16sp"
+        android:gravity="top|left"
+        android:hint="写回答..."
+        android:textColor="@color/material_blue_grey_900"
+        android:textColorHint="@color/material_blue_grey_900" />
+
+    <RelativeLayout
         android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:scrollbars="vertical">
+        android:layout_width="wrap_content"
+        android:background="@color/material_blue_grey_900"
+        >
 
-        <EditText
-            android:id="@+id/content_et"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/card_bg"
-            android:textSize="16sp"
-            android:gravity="top|left"
-            android:hint="写回答..."
-            android:minHeight="530dp"
-            android:padding="5dp"
-            android:textColor="@color/text_color" />
+        <CheckBox
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/addresponse_checkbox"
+            android:text="匿名评论"
+            android:layout_marginLeft="8dp" />
 
-    </ScrollView>
+        <ImageView
+            android:layout_height="32dp"
+            android:layout_width="wrap_content"
+            android:src="@drawable/send"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            />
 
+    </RelativeLayout>
 </LinearLayout>
