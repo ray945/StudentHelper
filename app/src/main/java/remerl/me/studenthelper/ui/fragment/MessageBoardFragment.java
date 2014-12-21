@@ -1,5 +1,6 @@
 package remerl.me.studenthelper.ui.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -13,6 +14,7 @@ import com.melnykov.fab.FloatingActionButton;
 
 import remerl.me.studenthelper.R;
 import remerl.me.studenthelper.adapter.MessagesAdapter;
+import remerl.me.studenthelper.ui.MessageActivity;
 
 /**
  * Created by qiugang on 14/11/13.
@@ -26,6 +28,8 @@ public class MessageBoardFragment extends BaseFragment implements SwipeRefreshLa
 
     private LinearLayout viewMessage;
 
+    private FloatingActionButton mfloatingActionButton;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -36,6 +40,14 @@ public class MessageBoardFragment extends BaseFragment implements SwipeRefreshLa
         mFAB.attachToListView(mListView);
         mFAB.show();
         mListView.setAdapter(new MessagesAdapter(getActivity()));
+        mfloatingActionButton = (FloatingActionButton) rootView.findViewById(R.id.message_fb);
+        mfloatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), MessageActivity.class);
+                startActivity(intent);
+            }
+        });
         return rootView;
     }
 

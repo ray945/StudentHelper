@@ -20,6 +20,11 @@
             android:label=""
             />
         <activity
+            android:name=".ui.MessageActivity"
+            android:label=""
+            android:windowSoftInputMode="adjustResize"
+            />
+        <activity
             android:windowSoftInputMode="adjustResize"
             android:name=".ui.ResonseActivity"
             android:label=""

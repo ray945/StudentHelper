@@ -5,12 +5,13 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:id="@+id/commentLinearLayout"
-    android:background="@drawable/card_bg">
+    android:background="#fff">
     <include layout= "@layout/toolbar"
         android:id="@+id/comment_actionbar"
         />
 
     <ListView
+        android:background="#fff"
         android:layout_marginTop="8dp"
         android:layout_below="@id/comment_actionbar"
         android:layout_height="wrap_content"
