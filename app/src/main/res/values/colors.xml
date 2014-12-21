@@ -16,7 +16,7 @@
     <color name="test">#FF6A6A</color>
     <color name="test_primary">#FFEB6161</color>
     <!--<color name="test">#0a8f08</color>-->
-    <color name="background">#292e34</color>
+    <color name="background">#FFDDDDDD</color>
 
 
     <color name="style_color_primary">#2d5d82</color>
