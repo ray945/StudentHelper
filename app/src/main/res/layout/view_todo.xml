@@ -24,7 +24,7 @@
                 android:id="@+id/todo_complete_button"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
-                android:background="#228B22"
+                android:background="#00FF00"
                 android:text="YES"/>
             <Button
                 android:id="@+id/todo_del_button"
@@ -40,8 +40,17 @@
             android:padding="8dp"
             android:background="#ffffff"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
             <!--What you want to show in SurfaceView-->
+            <Button
+                android:id="@+id/finish_flag"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_gravity="center_vertical"
+                android:background="#000"
+                android:layout_margin="10dp"/>
+
             <TextView
                 android:id="@+id/todo_content_textView"
                 android:tag="Hover"

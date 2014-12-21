@@ -1,5 +1,7 @@
 package remerl.me.studenthelper.ui.fragment;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.LoaderManager;
@@ -10,6 +12,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -34,6 +38,8 @@ public class TodoFragment extends BaseFragment implements LoaderManager.LoaderCa
     private TodoDataHelper mHelper;
 
     private TodoListAdapter mTodoListAdapter;
+
+    private LinearLayout createTodo;
 
     private int i = 1;
 
@@ -84,7 +90,27 @@ public class TodoFragment extends BaseFragment implements LoaderManager.LoaderCa
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.add_todo:
-                mHelper.insert(new Todo(1,"This is just for test" , "", 0));
+                createTodo = (LinearLayout) getActivity().getLayoutInflater()
+                        .inflate(R.layout.dialog_create_todo, null);
+                new AlertDialog.Builder(getActivity())
+                        .setTitle("添加Todo事件")
+                        .setView(createTodo)
+                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                String text = ((EditText) createTodo.findViewById(R.id.set_todo))
+                                        .getText().toString();
+                                mHelper.insert(new Todo(1, text, "", 0));
+                            }
+                        })
+                        .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                //取消
+                            }
+                        })
+                        .create()
+                        .show();
                 break;
             default:
                 break;

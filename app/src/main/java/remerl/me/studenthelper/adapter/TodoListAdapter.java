@@ -3,12 +3,14 @@ package remerl.me.studenthelper.adapter;
 import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.daimajia.swipe.SwipeLayout;
 import com.daimajia.swipe.adapters.CursorSwipeAdapter;
@@ -61,14 +63,23 @@ public class TodoListAdapter extends CursorSwipeAdapter {
     }
 
     @Override
-    public void bindView(View view, Context context,final Cursor cursor) {
+    public void bindView(View view, final Context context,final Cursor cursor) {
         final Holder holder = getHolder(view);
         mHelper = new TodoDataHelper(context);
         todo = Todo.fromCursor(cursor);
 //        Log.d("cursor position", cursor.getPosition() + "");
         final TextView contentView = (TextView) view.findViewById(R.id.todo_content_textView);
 
-        contentView.setText(todo._id+todo.content);
+        contentView.setText(todo.content);
+
+        if (todo.complete == 0) {
+            holder.todoComplete.setBackgroundColor(Color.GREEN);
+            holder.finishFlag.setBackgroundColor(Color.BLACK);
+        } else {
+            holder.todoComplete.setBackgroundColor(Color.BLACK);
+            holder.finishFlag.setBackgroundColor(Color.GREEN);
+        }
+
         holder.todoDel.setOnClickListener(new View.OnClickListener() {
             private Todo temple = todo;
             @Override
@@ -81,9 +92,22 @@ public class TodoListAdapter extends CursorSwipeAdapter {
             }
         });
         holder.todoComplete.setOnClickListener(new View.OnClickListener() {
+            private Todo temple = todo;
             @Override
             public void onClick(View v) {
-
+                if (temple.complete == 0) {
+                    holder.todoComplete.setText("NOT");
+                    holder.todoComplete.setBackgroundColor(Color.BLACK);
+                    holder.finishFlag.setBackgroundColor(Color.GREEN);
+                    temple.complete = 1;
+                    Toast.makeText(context, "完成"+"\""+holder.todoContent.getText().toString()+"\"", Toast.LENGTH_SHORT).show();
+                } else {
+                    holder.todoComplete.setText("YES");
+                    holder.todoComplete.setBackgroundColor(Color.GREEN);
+                    holder.finishFlag.setBackgroundColor(Color.BLACK);
+                    temple.complete = 0;
+                    Toast.makeText(context, "\""+holder.todoContent.getText().toString()+"\""+"待完成", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -112,10 +136,13 @@ public class TodoListAdapter extends CursorSwipeAdapter {
 
         private Button todoComplete;
 
+        private Button finishFlag;
+
         public Holder(View view) {
             todoLayout = (SwipeLayout) view.findViewById(R.id.todo_layout);
             todoDel = (Button) view.findViewById(R.id.todo_del_button);
             todoComplete = (Button) view.findViewById(R.id.todo_complete_button);
+            finishFlag = (Button) view.findViewById(R.id.finish_flag);
             this.todoContent = (TextView)view.findViewById(R.id.todo_content_textView);
         }
     }
