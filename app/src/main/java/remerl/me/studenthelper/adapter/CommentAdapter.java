@@ -8,22 +8,32 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 import remerl.me.studenthelper.App;
 import remerl.me.studenthelper.R;
+import remerl.me.studenthelper.model.Message;
 
 /**
  * Created by hu on 2014/12/17.
  */
 public class CommentAdapter extends BaseAdapter {
     private Context mContext;
+    private ArrayList<Message> list;
 
-    public CommentAdapter(Context context) {
+    public CommentAdapter(Context context,ArrayList<Message> list) {
+        this.list = list;
         this.mContext = context;
+    }
+
+    public void onDateChange(ArrayList<Message> list) {
+        this.list = list;
+        this.notifyDataSetChanged();
     }
 
     @Override
     public int getCount() {
-        return 20;
+        return list.size();
     }
 
     @Override
@@ -43,6 +53,7 @@ public class CommentAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
+        Message message = list.get(position);
         if (convertView == null) {
             convertView = LayoutInflater.from(App.getContext()).inflate(R.layout.view_comment_item, null);
             holder = getHolder(convertView);
@@ -50,7 +61,11 @@ public class CommentAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
+        holder.messageContentUser.setText(message.getUsername());
+        holder.messageContentDate.setText(message.getDate());
+        holder.messageContentWords.setText(message.getMessage());
         return convertView;
+
     }
 
     private ViewHolder getHolder(final View view) {

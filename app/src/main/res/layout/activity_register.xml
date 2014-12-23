@@ -1,0 +1,51 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:padding="16dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/activity_register_edit_user"
+            android:inputType="text"
+            android:paddingTop="20dp"
+            android:singleLine="true"
+            android:hint="用户名" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/activity_register_edit_num"
+            android:inputType="number"
+            android:hint="学号"
+            android:singleLine="true"
+            android:paddingTop="20dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/activity_register_edit_password"
+            android:inputType="textPassword"
+            android:hint="密码"
+            android:singleLine="true"
+            android:paddingTop="20dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:text="注册"
+            android:textSize="16sp" />
+
+
+    </LinearLayout>
+
+</ScrollView>

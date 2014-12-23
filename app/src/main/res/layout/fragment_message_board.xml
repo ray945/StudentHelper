@@ -27,8 +27,9 @@
         android:id="@+id/message_fb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center_horizontal"
-        android:layout_margin="16dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="32dp"
         android:src="@drawable/button_add"
         fab:fab_colorNormal="@color/test"
         fab:fab_colorPressed="@color/test"/>

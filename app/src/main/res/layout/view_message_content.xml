@@ -16,6 +16,7 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="48dp"
+            android:id="@+id/comment_userphoto"
             android:layout_height="48dp"
             android:src="@drawable/profile" />
 
@@ -30,6 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="皮卡丘 "
+                android:id="@+id/comment_UserNames"
                 android:textColor="@color/text_color"
                 android:textSize="14sp" />
 
@@ -38,6 +40,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:text="16小时前"
+                android:id="@+id/comment_Dates"
                 android:textColor="@color/text_color"
                 android:textSize="12sp" />
         </LinearLayout>
@@ -46,7 +49,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/message"
+        android:id="@+id/comment_message"
         android:paddingBottom="8dp"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"

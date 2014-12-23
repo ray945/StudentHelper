@@ -7,4 +7,6 @@
         <item name="windowActionBar">false</item>
         <item name="android:windowBackground">@color/background</item>
     </style>
+
+
 </resources>

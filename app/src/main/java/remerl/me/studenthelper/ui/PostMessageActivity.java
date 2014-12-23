@@ -12,7 +12,7 @@ import remerl.me.studenthelper.R;
 /**
  * Created by hu on 2014/12/21.
  */
-public class MessageActivity extends BaseActivity {
+public class PostMessageActivity extends BaseActivity {
     private Toolbar messageToolbar;
     private EditText message_et;
     private CheckBox message_cb;

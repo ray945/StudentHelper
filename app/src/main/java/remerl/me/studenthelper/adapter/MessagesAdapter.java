@@ -9,8 +9,11 @@ import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 import remerl.me.studenthelper.App;
 import remerl.me.studenthelper.R;
+import remerl.me.studenthelper.model.Message;
 import remerl.me.studenthelper.ui.CommentActivity;
 
 /**
@@ -18,29 +21,37 @@ import remerl.me.studenthelper.ui.CommentActivity;
  */
 public class MessagesAdapter extends BaseAdapter {
     private Context mContext;
+    private ArrayList<Message> list ;
 
-    public MessagesAdapter(Context context){
+    public MessagesAdapter(Context context, ArrayList<Message> list) {
+        this.list = list;
         this.mContext = context;
+    }
+
+    public void onDateChange(ArrayList<Message> list) {
+        this.list = list;
+        this.notifyDataSetChanged();
     }
 
     @Override
     public int getCount() {
-        return 20;
+        return list.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return list.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         Holder viewHolder;
+        Message message = list.get(position);
         if (convertView == null) {
             convertView = LayoutInflater.from(App.getContext()).inflate(R.layout.view_message, null);
             viewHolder = getHolder(convertView);
@@ -48,6 +59,10 @@ public class MessagesAdapter extends BaseAdapter {
         } else {
             viewHolder = (Holder) convertView.getTag();
         }
+//        viewHolder.buttonLikes.setImageResource(R.drawable.profile);
+        viewHolder.username.setText(message.getUsername());
+        viewHolder.date.setText(message.getDate());
+        viewHolder.commentMessage.setText(message.getMessage());
         viewHolder.commentMessage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,10 +89,16 @@ public class MessagesAdapter extends BaseAdapter {
 
         private TextView commentMessage;
 
+        private TextView date;
+
+        private TextView username;
+
         public Holder(View view) {
+            username = (TextView) view.findViewById(R.id.comment_UserNames);
+            date = (TextView) view.findViewById(R.id.comment_Dates);
             buttonLikes = (ImageButton) view.findViewById(R.id.message_like_button);
             buttonComments = (ImageButton) view.findViewById(R.id.message_comments_button);
-            commentMessage = (TextView) view.findViewById(R.id.message);
+            commentMessage = (TextView) view.findViewById(R.id.comment_message);
         }
 
     }

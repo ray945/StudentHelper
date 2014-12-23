@@ -4,31 +4,38 @@
 
     <application
         android:name=".App"
-        android:label="@string/app_name"
         android:icon="@null"
+        android:label="@string/app_name"
         android:theme="@style/MyTheme.Material">
-        <activity
-            android:name=".ui.MainActivity"
-            android:label="@string/app_name">
+        <activity android:name=".ui.LoginActivity"
+
+
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.RegisterActivity" />
+
+
+        <activity
+            android:name=".ui.MainActivity"
+            android:label="@string/app_name">
+
+        </activity>
         <activity
             android:name=".ui.CommentActivity"
-            android:label=""
-            />
+            android:label="" />
         <activity
-            android:name=".ui.MessageActivity"
+            android:name=".ui.PostMessageActivity"
             android:label=""
-            android:windowSoftInputMode="adjustResize"
-            />
+            android:windowSoftInputMode="adjustResize" />
         <activity
-            android:windowSoftInputMode="adjustResize"
-            android:name=".ui.ResonseActivity"
+            android:name=".ui.PostCommentActivity"
             android:label=""
-            />
+            android:windowSoftInputMode="adjustResize" />
 
         <provider
             android:name=".dao.TodoProvider"
@@ -36,6 +43,7 @@
             android:exported="false">
             <grant-uri-permission android:pathPattern=".*" />
         </provider>
+
     </application>
 
 </manifest>

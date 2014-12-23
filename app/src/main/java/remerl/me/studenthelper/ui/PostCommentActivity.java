@@ -11,7 +11,7 @@ import remerl.me.studenthelper.R;
 /**
  * Created by hu on 2014/12/17.
  */
-public class ResonseActivity extends BaseActivity {
+public class PostCommentActivity extends BaseActivity {
 
     private Toolbar responseBar;
 
