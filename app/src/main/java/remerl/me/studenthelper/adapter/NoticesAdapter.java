@@ -10,8 +10,11 @@ import android.widget.TextView;
 
 import com.ms.square.android.expandabletextview.ExpandableTextView;
 
+import java.util.ArrayList;
+
 import remerl.me.studenthelper.App;
 import remerl.me.studenthelper.R;
+import remerl.me.studenthelper.model.Notice;
 
 /**
  * Created by qiugang on 14/12/12.
@@ -19,15 +22,19 @@ import remerl.me.studenthelper.R;
 public class NoticesAdapter extends BaseAdapter {
     private Context mContext;
     private final SparseBooleanArray mCollapsedStatus;
+    private ArrayList<Notice> list ;
 
-    public NoticesAdapter(Context context) {
+    public NoticesAdapter(Context context,ArrayList<Notice> list) {
         this.mContext = context;
         mCollapsedStatus = new SparseBooleanArray();
+        this.list = list;
     }
+
+
 
     @Override
     public int getCount() {
-        return 20;
+        return list.size();
     }
 
     @Override
@@ -42,12 +49,12 @@ public class NoticesAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-
+        Notice notice = list.get(position);
         if (convertView == null) {
             convertView = LayoutInflater.from(App.getContext()).inflate(R.layout.view_notice, null);
         }
         Holder holder = getHolder(convertView);
-        holder.mExpandableTextView.setText(mContext.getString(R.string.test_string), mCollapsedStatus, position);
+        holder.mExpandableTextView.setText(notice.getNoticeContent(),mCollapsedStatus,position);
 
         return convertView;
     }
