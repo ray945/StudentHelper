@@ -2,7 +2,8 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/background">
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -44,7 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:background="#FF6A6A"
+                android:background="#7986cb"
                 android:orientation="vertical">
 
                 <TextView
@@ -60,9 +61,10 @@
                     android:id="@+id/content_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:lineSpacingExtra="15sp"
                     android:textColor="#fff"
                     android:padding="10dp"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:text="网协是一个魔鬼教官，他会要求你每天写9小时40分钟代码。他的每一次出招都居心叵测，你的每一次接招他都铭记在心。每一份努力都换来一份收获，到毕业之时，十万代码也就烂熟于心了。"/>
             </LinearLayout>
         </LinearLayout>
@@ -94,6 +96,7 @@
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="20dp"
                         android:textColor="@color/text_color"
+                        android:textSize="14sp"
                         android:text="备忘录"/>
                 </LinearLayout>
 

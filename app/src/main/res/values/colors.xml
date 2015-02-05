@@ -13,8 +13,9 @@
     <color name="text_color">#666</color>
     <color name="text_title_color">#fff</color>
 
-    <color name="test">#FF6A6A</color>
-    <color name="test_primary">#FFEB6161</color>
+    <color name="test">#3f51b5</color>
+    <color name="test_primary">#303f9f</color>
+    <color name="attention">#259b24</color>
     <!--<color name="test">#0a8f08</color>-->
     <color name="background">#FFDDDDDD</color>
 

@@ -17,6 +17,8 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.melnykov.fab.FloatingActionButton;
+
 import remerl.me.studenthelper.App;
 import remerl.me.studenthelper.R;
 import remerl.me.studenthelper.adapter.TodoListAdapter;
@@ -41,6 +43,8 @@ public class TodoFragment extends BaseFragment implements LoaderManager.LoaderCa
 
     private LinearLayout createTodo;
 
+    private FloatingActionButton todoAdd;
+
     private int i = 1;
 
 
@@ -56,40 +60,11 @@ public class TodoFragment extends BaseFragment implements LoaderManager.LoaderCa
         mListView.setAdapter(mTodoListAdapter);
         getLoaderManager().initLoader(0, null, this);
         mHelper = new TodoDataHelper(getActivity());
-        return todoView;
-    }
 
-
-    @Override
-    public Loader<Cursor> onCreateLoader(int id, Bundle args) {
-        return new TodoDataHelper(App.getContext()).getTodoCursorLoader();
-    }
-
-    @Override
-    public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
-        mTodoListAdapter.changeCursor(data);
-    }
-
-    @Override
-    public void onLoaderReset(Loader<Cursor> loader) {
-        getLoaderManager().restartLoader(0, null, this);
-    }
-
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.menu_todo, menu);
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setHasOptionsMenu(true);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.add_todo:
+        todoAdd = (FloatingActionButton) todoView.findViewById(R.id.todo_add);
+        todoAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 createTodo = (LinearLayout) getActivity().getLayoutInflater()
                         .inflate(R.layout.dialog_create_todo, null);
                 new AlertDialog.Builder(getActivity())
@@ -111,10 +86,40 @@ public class TodoFragment extends BaseFragment implements LoaderManager.LoaderCa
                         })
                         .create()
                         .show();
-                break;
-            default:
-                break;
-        }
+            }
+        });
+        return todoView;
+    }
+
+
+    @Override
+    public Loader<Cursor> onCreateLoader(int id, Bundle args) {
+        return new TodoDataHelper(App.getContext()).getTodoCursorLoader();
+    }
+
+    @Override
+    public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
+        mTodoListAdapter.changeCursor(data);
+    }
+
+    @Override
+    public void onLoaderReset(Loader<Cursor> loader) {
+        getLoaderManager().restartLoader(0, null, this);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
         return true;
     }
 

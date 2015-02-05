@@ -23,22 +23,25 @@
         android:textColorHint="@color/material_blue_grey_900" />
 
     <RelativeLayout
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_width="wrap_content"
-        android:background="@color/material_blue_grey_900"
+        android:background="@color/test"
 
         >
 
         <CheckBox
-            android:layout_height="wrap_content"
+            android:layout_height="38dp"
             android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
             android:id="@+id/addresponse_checkbox"
-            android:text="匿名评论"
+            android:text="匿名"
+            android:textSize="22sp"
             android:layout_marginLeft="8dp" />
 
         <ImageView
-            android:layout_height="32dp"
+            android:layout_height="38dp"
             android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
             android:src="@drawable/send"
             android:layout_alignParentRight="true"
             android:layout_marginRight="8dp"

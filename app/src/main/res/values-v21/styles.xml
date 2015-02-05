@@ -2,4 +2,8 @@
 <resources>
     <style name="AppTheme" parent="android:Theme.Material.Light">
     </style>
+    <style name="Dialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:width">150dp</item>
+        <item name="android:background">#ffffff</item>
+    </style>
 </resources>

@@ -19,6 +19,7 @@ import remerl.me.studenthelper.ui.fragment.DrawerFragment;
 import remerl.me.studenthelper.ui.fragment.IndexFragment;
 import remerl.me.studenthelper.ui.fragment.MessageBoardFragment;
 import remerl.me.studenthelper.ui.fragment.NoticeFragment;
+import remerl.me.studenthelper.ui.fragment.SettingFragment;
 import remerl.me.studenthelper.ui.fragment.TodoFragment;
 
 /**
@@ -139,7 +140,7 @@ public class MainActivity extends BaseActivity {
                 contentFragment = new MessageBoardFragment();
                 break;
             case Settings:
-
+                contentFragment = new SettingFragment();
                 break;
             default:
                 break;

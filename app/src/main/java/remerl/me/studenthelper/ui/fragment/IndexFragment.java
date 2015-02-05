@@ -42,7 +42,7 @@ public class IndexFragment extends BaseFragment implements View.OnClickListener 
         intoNotice = (Button) view.findViewById(R.id.into_notice);
         intoMessage = (Button) view.findViewById(R.id.into_message);
         intoInfo = (Button) view.findViewById(R.id.into_info);
-        intoSetting = (Button) view.findViewById(R.id.into_info);
+        intoSetting = (Button) view.findViewById(R.id.into_setting);
         intoQuit = (Button) view.findViewById(R.id.into_quit);
         intoTodo.setOnClickListener(this);
         intoNotice.setOnClickListener(this);
@@ -69,13 +69,11 @@ public class IndexFragment extends BaseFragment implements View.OnClickListener 
                 activity.setCategory(Category.MessageBoard);
                 break;
             case R.id.into_info:
-                //未完成
-                break;
-            case R.id.into_setting:
                 activity.setCategory(Category.Settings);
                 break;
+            case R.id.into_setting:
+                break;
             case R.id.into_quit:
-                //未完成
                 break;
             default:
                 break;
