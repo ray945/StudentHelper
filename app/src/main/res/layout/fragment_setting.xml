@@ -21,24 +21,31 @@
                 android:id="@+id/infor_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="80dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="72dp"
+                android:padding="16dp"
                 android:layout_alignParentBottom="true"
                 android:text="赵瑞"
                 android:textSize="45sp"/>
 
         </RelativeLayout>
 
+        <ListView
+            android:id="@+id/list_view_info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </ListView>
+
     </LinearLayout>
 
     <com.melnykov.fab.FloatingActionButton
-        android:id="@+id/message_fb"
+        android:id="@+id/info_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|right"
         android:layout_marginRight="32dp"
         android:layout_marginBottom="32dp"
-        android:src="@drawable/button_add"
+        android:src="@drawable/ic_edit_white_18dp"
         app:fab_colorNormal="@color/attention"
         app:fab_colorPressed="#056f00"/>
 

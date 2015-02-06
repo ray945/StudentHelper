@@ -17,7 +17,7 @@
     <color name="test_primary">#303f9f</color>
     <color name="attention">#259b24</color>
     <!--<color name="test">#0a8f08</color>-->
-    <color name="background">#FFDDDDDD</color>
+    <color name="background">@color/background_material_light</color>
 
 
     <color name="style_color_primary">#2d5d82</color>

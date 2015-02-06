@@ -63,7 +63,7 @@
         android:layout_gravity="bottom|right"
         android:layout_marginRight="32dp"
         android:layout_marginBottom="32dp"
-        android:src="@drawable/button_add"
+        android:src="@drawable/ic_add_white_48dp"
         app:fab_colorNormal="@color/attention"
         app:fab_colorPressed="#056f00"/>
 </FrameLayout>
