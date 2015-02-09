@@ -9,4 +9,12 @@
         <item name="android:navigationBarColor">@color/test_primary</item>
         <item name="android:alertDialogTheme">@style/Dialog</item>
     </style>
+
+    <style name="MyTheme.Material.Light" parent="Theme.AppCompat">
+        <item name="colorPrimary">@color/test</item>
+        <item name="colorPrimaryDark">@color/test_primary</item>
+        <item name="windowActionBar">true</item>
+        <item name="android:navigationBarColor">@color/test_primary</item>
+        <item name="android:alertDialogTheme">@style/Dialog</item>
+    </style>
 </resources>

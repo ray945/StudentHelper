@@ -1,5 +1,6 @@
 package remerl.me.studenthelper.ui;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
@@ -102,6 +103,13 @@ public class MainActivity extends BaseActivity {
 
         if (mDrawerToggle.onOptionsItemSelected(item)) {
             return true;
+        }
+
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                Intent intent = new Intent(this, SettingActivity.class);
+                startActivity(intent);
+
         }
 
         return super.onOptionsItemSelected(item);

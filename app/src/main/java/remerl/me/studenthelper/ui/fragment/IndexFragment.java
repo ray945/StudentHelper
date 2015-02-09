@@ -1,5 +1,6 @@
 package remerl.me.studenthelper.ui.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -11,6 +12,7 @@ import android.widget.Button;
 import remerl.me.studenthelper.R;
 import remerl.me.studenthelper.model.Category;
 import remerl.me.studenthelper.ui.MainActivity;
+import remerl.me.studenthelper.ui.SettingActivity;
 
 /**
  * Created by ray on 14-12-15.
@@ -72,6 +74,8 @@ public class IndexFragment extends BaseFragment implements View.OnClickListener 
                 activity.setCategory(Category.Settings);
                 break;
             case R.id.into_setting:
+                Intent intent = new Intent(getActivity(), SettingActivity.class);
+                startActivity(intent);
                 break;
             case R.id.into_quit:
                 break;
