@@ -17,4 +17,27 @@
 
     </style>
 
+    <style name="Dialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="DialogTitle" >
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/black_translucent</item>
+    </style>
+
+    <style name="DialogBody" >
+        <item name="android:layout_marginTop">12sp</item>
+        <item name="android:layout_marginBottom">24sp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/abc_primary_text_material_light</item>
+    </style>
+
+    <style name="EditText" parent="Widget.AppCompat.EditText">
+        <item name="android:layout_marginTop">12sp</item>
+        <item name="android:layout_marginBottom">24sp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/primary_text_default_material_light</item>
+        <item name="android:background">@drawable/abc_edit_text_material</item>
+    </style>
 </resources>

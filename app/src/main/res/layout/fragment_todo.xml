@@ -21,7 +21,7 @@
                 android:layout_width="10dp"
                 android:layout_height="10dp"
                 android:layout_gravity="center_vertical"
-                android:background="#00FF00"/>
+                android:background="#9575cd"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -36,7 +36,7 @@
                 android:layout_width="10dp"
                 android:layout_height="10dp"
                 android:layout_gravity="center_vertical"
-                android:background="#000000"/>
+                android:background="#056f00"/>
 
             <TextView
                 android:layout_width="wrap_content"

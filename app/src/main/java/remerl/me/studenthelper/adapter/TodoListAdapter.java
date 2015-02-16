@@ -73,11 +73,11 @@ public class TodoListAdapter extends CursorSwipeAdapter {
         contentView.setText(todo.content);
 
         if (todo.complete == 0) {
-            holder.todoComplete.setBackgroundColor(Color.GREEN);
-            holder.finishFlag.setBackgroundColor(Color.BLACK);
+            holder.todoComplete.setBackgroundColor(Color.rgb(149,117,205));
+            holder.finishFlag.setBackgroundColor(Color.rgb(5,111,0));
         } else {
-            holder.todoComplete.setBackgroundColor(Color.BLACK);
-            holder.finishFlag.setBackgroundColor(Color.GREEN);
+            holder.todoComplete.setBackgroundColor(Color.rgb(5,111,0));
+            holder.finishFlag.setBackgroundColor(Color.rgb(149,117,205));
         }
 
         holder.todoDel.setOnClickListener(new View.OnClickListener() {
@@ -97,15 +97,17 @@ public class TodoListAdapter extends CursorSwipeAdapter {
             public void onClick(View v) {
                 if (temple.complete == 0) {
                     holder.todoComplete.setText("NOT");
-                    holder.todoComplete.setBackgroundColor(Color.BLACK);
-                    holder.finishFlag.setBackgroundColor(Color.GREEN);
+                    holder.todoComplete.setBackgroundColor(Color.rgb(5,111,0));
+                    holder.finishFlag.setBackgroundColor(Color.rgb(149,117,205));
                     temple.complete = 1;
+                    mHelper.update(temple);
                     Toast.makeText(context, "完成"+"\""+holder.todoContent.getText().toString()+"\"", Toast.LENGTH_SHORT).show();
                 } else {
                     holder.todoComplete.setText("YES");
-                    holder.todoComplete.setBackgroundColor(Color.GREEN);
-                    holder.finishFlag.setBackgroundColor(Color.BLACK);
+                    holder.todoComplete.setBackgroundColor(Color.rgb(149,117,205));
+                    holder.finishFlag.setBackgroundColor(Color.rgb(5,111,0));
                     temple.complete = 0;
+                    mHelper.update(temple);
                     Toast.makeText(context, "\""+holder.todoContent.getText().toString()+"\""+"待完成", Toast.LENGTH_SHORT).show();
                 }
             }

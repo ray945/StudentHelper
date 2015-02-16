@@ -30,6 +30,7 @@ public class TodoDataHelper extends BaseDataHelper {
 
     private ContentValues getContentValues(Todo todo) {
         ContentValues values = new ContentValues();
+        values.put(TodoDBInfo._ID, todo._id);
         values.put(TodoDBInfo.CONTENT, todo.content);
         values.put(TodoDBInfo.CREATE_AT, todo.create_at);
         values.put(TodoDBInfo.COMPLETE, todo.complete);
@@ -66,6 +67,12 @@ public class TodoDataHelper extends BaseDataHelper {
 
     public void delete(Todo todo) {
         delete(getContentUri(), TodoDBInfo._ID + "=?",new String[]{
+                String.valueOf(todo._id)
+        });
+    }
+
+    public void update(Todo todo) {
+        update(getContentValues(todo), TodoDBInfo._ID + "=?", new String[]{
                 String.valueOf(todo._id)
         });
     }

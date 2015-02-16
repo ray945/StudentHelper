@@ -45,7 +45,7 @@ public class TodoFragment extends BaseFragment implements LoaderManager.LoaderCa
 
     private FloatingActionButton todoAdd;
 
-    private int i = 1;
+    private int i = 50;
 
 
     @Override
@@ -75,7 +75,15 @@ public class TodoFragment extends BaseFragment implements LoaderManager.LoaderCa
                             public void onClick(DialogInterface dialog, int which) {
                                 String text = ((EditText) createTodo.findViewById(R.id.set_todo))
                                         .getText().toString();
-                                mHelper.insert(new Todo(1, text, "", 0));
+                                while (true) {
+                                    if (mHelper.query(i) == null && i>0)
+                                        i--;
+                                    else {
+                                        i++;
+                                        break;
+                                    }
+                                }
+                                mHelper.insert(new Todo(i, text, "", 0));
                             }
                         })
                         .setNegativeButton("取消", new DialogInterface.OnClickListener() {

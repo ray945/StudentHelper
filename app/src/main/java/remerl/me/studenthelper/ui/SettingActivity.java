@@ -5,7 +5,6 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.LinearLayout;
@@ -47,6 +46,8 @@ public class SettingActivity extends ActionBarActivity {
 
     private ScrollView editInfo;
 
+    private LinearLayout editPassword;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,9 +64,11 @@ public class SettingActivity extends ActionBarActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (listItems1.get(position).get("key").toString()) {
                     case "修改密码":
+                        editPassword = (LinearLayout) getLayoutInflater()
+                                .inflate(R.layout.dialog_password, null);
                         new AlertDialog.Builder(SettingActivity.this)
                                 .setTitle("设置您的密码")
-                                .setView(R.layout.dialog_password)
+                                .setView(editPassword)
                                 .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
